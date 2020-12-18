@@ -10,7 +10,7 @@ export default function App() {
     <View style={styles.container}>
       <Text>Counter App</Text>
       <Text>{count}</Text>
-      <View style={{ display: "flex", justifyContent: 'space-between', width: '100%' }}>
+      <View style={{ flexDirection: "row", justifyContent: 'space-between', width: '50%' }}>
         <Button style={styles.button} title="Increase" />
         <Button style={styles.button} title="Decrease" />
       </View>
@@ -20,11 +20,11 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    minHeight: '100vh',
-    padding: '0 0.5rem',
+    flex: 1,
+    backgroundColor: '#fff',
     display: 'flex',
+    alignItems: 'center',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
   },
 });
