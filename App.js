@@ -18,7 +18,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Counter App</Text>
-      <Text>{count}</Text>
+      <Text style={styles.number}>{count}</Text>
       <View style={{ flexDirection: "row", justifyContent: 'space-between', width: '50%' }}>
         <Button onPress={IncreaseCount} style={styles.button} title="Increase" />
         <Button onPress={DecreaseCount} style={styles.button} title="Decrease" />
@@ -35,5 +35,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'column',
     justifyContent: 'center',
+  },
+
+  number: {
+    width: 80,
+    height: 48,
+    color: '#d60000a6',
+    backgroundColor: '#000',
+    fontSize: 40,
+    textAlign: 'center',
   },
 });
