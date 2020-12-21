@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 const { useState } = React;
 
@@ -19,9 +19,13 @@ export default function App() {
     <View style={styles.container}>
       <Text>Counter App</Text>
       <Text style={styles.number}>{count}</Text>
-      <View style={{ flexDirection: "row", justifyContent: 'space-between', width: '50%' }}>
-        <Button onPress={IncreaseCount} style={styles.button} title="Increase" />
-        <Button onPress={DecreaseCount} style={styles.button} title="Decrease" />
+      <View style={{ flexDirection: 'row' }}>
+        < TouchableOpacity onPress={IncreaseCount} style={styles.button} >
+          <Text>Increase</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={DecreaseCount} style={styles.button}>
+          <Text>Decrease</Text>
+        </TouchableOpacity>
       </View>
     </View >
   );
@@ -45,4 +49,15 @@ const styles = StyleSheet.create({
     fontSize: 40,
     textAlign: 'center',
   },
+
+  button: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    width: 30,
+    height: 50,
+    backgroundColor: '#c2c2c2',
+    borderWidth: 2,
+    borderColor: '#7b7b7b'
+  }
 });
