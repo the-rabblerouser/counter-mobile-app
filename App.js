@@ -2,6 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
+import Title from '../counterapp/components/Title';
+import Number from '../counterapp/components/Number';
+
 const { useState } = React;
 
 export default function App() {
@@ -9,6 +12,7 @@ export default function App() {
 
   const IncreaseCount = () => {
     setCount(count + 1);
+    console.log(count);
   };
 
   const DecreaseCount = () => {
@@ -17,10 +21,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Counter App</Text>
-      <Text style={styles.number}>{count}</Text>
+      <Title />
+      <Number count={count} />
       <View style={{ flexDirection: 'row' }}>
-        < TouchableOpacity onPress={IncreaseCount} style={styles.button} >
+        <TouchableOpacity onPress={IncreaseCount} style={styles.button} >
           <Text>Increase</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={DecreaseCount} style={styles.button}>
@@ -34,22 +38,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'column',
-    justifyContent: 'center',
+    backgroundColor: '#c2c2c2',
+    // alignItems: 'center',
+    // flexDirection: 'column',
+    // justifyContent: 'center',
   },
-
-  number: {
-    width: 80,
-    height: 48,
-    color: '#d60000a6',
-    backgroundColor: '#000',
-    fontSize: 40,
-    textAlign: 'center',
-  },
-
   button: {
     flex: 1,
     alignItems: 'center',
@@ -57,7 +50,11 @@ const styles = StyleSheet.create({
     width: 30,
     height: 50,
     backgroundColor: '#c2c2c2',
-    borderWidth: 2,
-    borderColor: '#7b7b7b'
+    borderWidth: 1,
+    borderRightColor: '#999',
+    borderLeftColor: '#fff',
+    borderBottomColor: '#999',
+    borderTopColor: '#fff',
+
   }
 });
