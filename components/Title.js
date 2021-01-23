@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 const Title = () => {
     return (
         <View style={styles.titleContainer}>
-            <Text style={styles.title}>Counter Game</Text>
+            <Text style={styles.title}>Counter App</Text>
         </View>
     );
 };

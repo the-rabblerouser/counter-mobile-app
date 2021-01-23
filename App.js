@@ -2,8 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-import Title from '../counterapp/components/Title';
-import Number from '../counterapp/components/Number';
+import Title from './components/Title';
+import Number from './components/Number';
 
 const { useState } = React;
 
