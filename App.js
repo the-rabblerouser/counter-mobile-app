@@ -1,6 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+
+import Title from './components/Title';
+import Number from './components/Number';
 
 const { useState } = React;
 
@@ -9,6 +12,7 @@ export default function App() {
 
   const IncreaseCount = () => {
     setCount(count + 1);
+    console.log(count);
   };
 
   const DecreaseCount = () => {
@@ -17,11 +21,15 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Counter App</Text>
-      <Text style={styles.number}>{count}</Text>
-      <View style={{ flexDirection: "row", justifyContent: 'space-between', width: '50%' }}>
-        <Button onPress={IncreaseCount} style={styles.button} title="Increase" />
-        <Button onPress={DecreaseCount} style={styles.button} title="Decrease" />
+      <Title />
+      <Number count={count} />
+      <View style={{ flexDirection: 'row' }}>
+        <TouchableOpacity onPress={IncreaseCount} style={styles.button} >
+          <Text>Increase</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={DecreaseCount} style={styles.button}>
+          <Text>Decrease</Text>
+        </TouchableOpacity>
       </View>
     </View >
   );
@@ -30,19 +38,23 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    display: 'flex',
+    backgroundColor: '#c2c2c2',
+    // alignItems: 'center',
+    // flexDirection: 'column',
+    // justifyContent: 'center',
+  },
+  button: {
+    flex: 1,
     alignItems: 'center',
-    flexDirection: 'column',
-    justifyContent: 'center',
-  },
+    justifyContent: 'space-around',
+    width: 30,
+    height: 50,
+    backgroundColor: '#c2c2c2',
+    borderWidth: 1,
+    borderRightColor: '#999',
+    borderLeftColor: '#fff',
+    borderBottomColor: '#999',
+    borderTopColor: '#fff',
 
-  number: {
-    width: 80,
-    height: 48,
-    color: '#d60000a6',
-    backgroundColor: '#000',
-    fontSize: 40,
-    textAlign: 'center',
-  },
+  }
 });
